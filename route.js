@@ -64,7 +64,7 @@ function powerCheck(num) {
 }
 
 //creates addresses to summarize using magic numbers
-function createSubnet (current) {
+function createSubnet (current, last) {
     let tempAdd = [...current];
     let temp = tempAdd[4];
     let pos = 0;
@@ -81,7 +81,7 @@ function createSubnet (current) {
     }
     tempAdd[4]++;
     
-    if(randomNum(0,2) == 0 && tempAdd[4] != 8 && tempAdd[4] != 16 && tempAdd[4] != 24) {
+    if( last && randomNum(0,2) == 0 && tempAdd[4] != 8 && tempAdd[4] != 16 && tempAdd[4] != 24) {
         tempAdd[4]++;
     }
     
@@ -113,9 +113,10 @@ let sumRoute = [];
 
 //adds addresses to array, between 5 and 10 addresses
 addressList.push(startAddress);
-for (let i = 0; i <(randomNum(5,11)); i++){
-    addressList.push(createSubnet(addressList[i + 1]));
+for (let i = 0; i <(randomNum(5,10)); i++){
+    addressList.push(createSubnet(addressList[i + 1], true));
 }
+addressList.push(createSubnet(addressList[addressList.length - 1], false));
 
 //removes 0 at start and then takes out first address as summarized route
 addressList.shift();
@@ -208,7 +209,7 @@ submitButton.addEventListener('click', event =>{
     
     //other display output to show grades and correct answers
     document.querySelector('div').innerHTML = `${sumRoute[0]}.${sumRoute[1]}.${sumRoute[2]}.${sumRoute[3]}/${sumRoute[4]}`;
-    document.querySelector('h4').innerHTML = `You scored ${score}/${total}. The correct answers are displayed below:`;
+    document.querySelector('h4').innerHTML = `You scored ${score}/${total} or ${(score / total * 100).toFixed(0)}%. The correct answers are displayed below:`;
     document.querySelector('div#exclusion').innerHTML = excludeText;
     submitButton.style.display = 'none';
     
