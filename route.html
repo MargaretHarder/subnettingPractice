@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Route Summary Practice</title>
+        
+        <link href="styles.css" rel="stylesheet" />
+        <script src="route.js" defer></script>
+    </head>
+    <body>
+        <h1>Route Summary Practice</h1>
+        
+        <h4>Summarize the following networks and add any exclusions:</h4>
+        
+        <p class="routes" style="display: none;"></p>
+        <p class="routes" style="display: none;"></p>
+        <p class="routes" style="display: none;"></p>
+        <p class="routes" style="display: none;"></p>
+        <p class="routes" style="display: none;"></p>
+        <p class="routes" style="display: none;"></p>
+        <p class="routes" style="display: none;"></p>
+        
+        <h4>Summarized Route:</h4>
+        <div>
+            <p><input type="text" class='sumRoute'/> . <input type="text" class='sumRoute'/> . <input type="text" class='sumRoute'/> . <input type="text" class='sumRoute'/> / <input type="text" class='sumRoute'/></p>
+        </div>
+        
+        
+        <h4>Exclusions:</h4>
+        <div id='exclusion'>
+            <p>
+                <input type="text" class='exclusions'/> . <input type="text" class='exclusions'/> . <input type="text" class='exclusions'/> . <input type="text" class='exclusions'/> / <input type="text" class='exclusions'/>
+            </p>
+        </div>
+        
+        <div><p>
+            <input type='button' value='Add Exclusion' id='exclusionAdd' />
+            <input type='button' value='-' id='exclusionSub' />
+        </p></div>
+        
+        <br />
+        <input type='button' value='Submit' id='submitButton'/>
+        <p>
+            <a href='home.html'>Return Home</a>
+        </p>
+    </body>
+</html>

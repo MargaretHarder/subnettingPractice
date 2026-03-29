@@ -26,8 +26,8 @@ h1 {
 }
 
 h4 {
-    padding-top: 2.25em;
-    padding-bottom: 1.75em;
+    padding-top: 1.25em;
+    padding-bottom: 1em;
     font-size: 1.2em;
     width: 90%;
     margin: auto;
@@ -51,12 +51,24 @@ td {
     border: 0.15em solid #134749;
     background-color: white;
 }
+
 td input {
     width: 100%;
     height: 100%;
     border: none;
     outline: none;
     box-sizing: border-box;
+}
+
+div p {
+    font-weight: 500;
+}
+
+div p input {
+    background-color: #57a8a6;
+    border: 0.15em solid #134749;
+    width: 6%;
+    height: 1.7em;
 }
 
 input[type="button"] {
@@ -69,6 +81,19 @@ input[type="button"] {
     font-size: large;
     font-family: Verdana;
     border: 0.2em solid #134749;
+}
+
+input#exclusionAdd, input#exclusionSub {
+    width: 10%;
+    height: 2em;
+    background-color: #216e70;
+    border: 0.2em solid #134749;
+    color: #c6e1e6;
+    
+    margin-bottom: 3em;
+}
+input#exclusionSub {
+    width: 3%;
 }
 
 input[type="button"]:hover {
